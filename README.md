@@ -12,11 +12,15 @@
    ```sh
    pip install -r requirements.txt
    ```
-4. Apply database migrations:
+4. Prepare database migrations:
+   ```sh
+   python manage.py makemigrations
+   ```
+5. Apply database migrations:
    ```sh
    python manage.py migrate
    ```
-5. Start the backend server:
+6. Start the backend server:
    ```sh
    python manage.py runserver
    ```
