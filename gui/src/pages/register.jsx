@@ -30,7 +30,7 @@ function Register() {
     console.log('Form data:', formData);
     try {
       await registerUser(formData);
-      navigate('/login'); // Redirect to login page after successful registration
+      navigate('/login');
     } catch (error) {
       console.log(error)
       setError('Registration failed. Please try again.');
