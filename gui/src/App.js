@@ -47,16 +47,6 @@ function App() {
                                     <Home />
                                 </ProtectedRoute>
                             } />
-                            <Route path="/map" element={
-                                <ProtectedRoute>
-                                    <Map />
-                                </ProtectedRoute>
-                            } />
-                            <Route path="/market" element={
-                                <ProtectedRoute>
-                                    <Market />
-                                </ProtectedRoute>
-                            } />
                             <Route path="/profile" element={
                                 <ProtectedRoute>
                                     <Profile />
