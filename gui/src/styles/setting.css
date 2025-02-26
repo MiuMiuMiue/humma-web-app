@@ -1,0 +1,162 @@
+/* 设置整体容器 */
+.settings-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 0px;
+}
+
+/* 标题样式 */
+.settings-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+
+/* 设置项列表 */
+.settings-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* 每个设置项 */
+.setting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+}
+
+/* 设置项的文本和图标 */
+.setting-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 26px;
+  color: #444;
+}
+
+/* 图标样式 */
+.setting-icon {
+  color: #4b2d83; /* 紫色，与图片相近 */
+  font-size: 18px;
+}
+
+/* 开关样式 */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 48px;
+  min-width: 48px;
+  height: 24px;
+}
+
+/* 隐藏默认复选框 */
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+/* 滑块样式 */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.toggle-switch input:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* 移除点击后的默认蓝色背景 */
+.toggle-switch input:focus + .slider {
+  outline: none;
+  box-shadow: none;
+}
+
+/* 圆点 */
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+/* 选中状态 */
+.toggle-switch input:checked + .slider {
+  background-color: #4b2d83;
+}
+
+.toggle-switch input:checked + .slider:before {
+  transform: translateX(24px);
+}
+
+/* 主题选项下拉框 */
+.theme-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+}
+
+/* 主题选项样式 */
+.theme-dropdown label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 隐藏默认的 radio 按钮 */
+.theme-dropdown input {
+  accent-color: #4b2d83; /* 选中状态为紫色 */
+}
+
+/* 语言选项下拉框 */
+.language-dropdown {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 5px;
+}
+
+/* 语言选项样式 */
+.language-dropdown label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+/* 选中状态颜色 */
+.language-dropdown input {
+  accent-color: #4b2d83;
+}

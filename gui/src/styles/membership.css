@@ -1,0 +1,140 @@
+/* 页面整体容器 */
+.membership-container {
+  max-width: 400px;
+  margin: 20px auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-top: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* 头部标题 */
+.membership-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* 返回按钮 */
+.back-icon {
+  cursor: pointer;
+  font-size: 22px;
+  color: #4b2d83;
+}
+
+/* 训练模式开关 */
+.membership-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #333;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 开关按钮 */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  min-width: 40px;
+  height: 20px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: 0.4s;
+}
+
+.toggle-switch input:checked + .slider {
+  background-color: #4b2d83;
+}
+
+.toggle-switch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* 会员权益文本 */
+.membership-text {
+  margin-top: 20px;
+  font-size: 18px;
+  color: #555;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+/* 会员权益列表 */
+.membership-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.membership-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+  margin: 10px 0;
+}
+
+/* 复选图标 */
+.check-icon {
+  color: #4b2d83;
+  font-size: 20px;
+}
+
+/* 隐私政策 */
+.privacy-policy {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 让文本居中 */
+  gap: 5px;
+  text-decoration: none;
+  color: #4b2d83;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 30px; /* 增加与上方内容的间距 */
+}
+
+.privacy-policy:hover {
+  text-decoration: underline;
+}
+
+/* 链接图标 */
+.link-icon {
+  font-size: 16px;
+}
