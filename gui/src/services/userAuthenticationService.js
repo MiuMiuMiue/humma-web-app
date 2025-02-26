@@ -7,15 +7,15 @@ export async function registerUser(userData) {
             },
             body: JSON.stringify(userData)
         });
-
-        if (!response.ok) {
-            throw new Error('Failed to register user');
-        }   
         
         const data = await response.json();
+
+        if (!response.ok) {
+            throw data;
+        }
+        
         return data;
     } catch (error) {
-        console.error('Error registering user:', error);
         throw error;
     }
 }

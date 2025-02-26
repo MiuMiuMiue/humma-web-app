@@ -27,13 +27,17 @@ function Register() {
     e.preventDefault();
     setSubmitted(true);
     setError('');
-    console.log('Form data:', formData);
     try {
       await registerUser(formData);
       navigate('/login');
     } catch (error) {
-      console.log(error)
-      setError('Registration failed. Please try again.');
+      if (error.username) {
+        setError("Username already exists.")
+      } else if (error.email) { 
+        setError("Email already exists.")
+      } else {
+        setError('Registration failed. Please try again.');
+      }
       setSubmitted(false);
     }
   };
