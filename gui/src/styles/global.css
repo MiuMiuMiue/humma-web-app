@@ -44,9 +44,10 @@ body {
 
 .content {
     flex: 1;
-    padding: 20px;
-    padding-top: 12vh;
-    padding-bottom: 9vh;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    height: calc(100vh - 20vh);
+    box-sizing: border-box;
     overflow-y: auto;
 }
 

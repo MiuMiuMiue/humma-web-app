@@ -14,7 +14,10 @@ function Home() {
                     loadMorePosts();
                 }
             },
-            { threshold: 1.0 }
+            { 
+                threshold: 0.1,
+                rootMargin: '100px'
+            }
         );
 
         if (loaderRef.current) {
