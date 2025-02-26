@@ -43,3 +43,10 @@ class UserLoginSerializer(serializers.Serializer):
             }
 
         raise serializers.ValidationError("Invalid credentials")
+
+class UserProfileSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    email = serializers.EmailField(read_only=True)
+    username = serializers.CharField(read_only=True)
+    birthdate = serializers.DateField(read_only=True)
+    gender = serializers.CharField(read_only=True)
