@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import TopPanel from "./components/topPanel";
@@ -14,7 +13,6 @@ import Register from "./pages/register";
 import Login from "./pages/login";
 import "./styles/global.css";
 
-// Add this protected route component
 const ProtectedRoute = ({ children }) => {
   const token = localStorage.getItem('access-token');
   if (!token) {
