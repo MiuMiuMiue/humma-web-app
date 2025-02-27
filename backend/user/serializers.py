@@ -78,3 +78,10 @@ class UserSettingsUpdateSerializer(serializers.ModelSerializer):
             settings_serializer.is_valid(raise_exception=True)
             settings_serializer.save()
         return super().update(instance, validated_data)
+
+class UserProfileSerializer(serializers.Serializer):
+    id = serializers.IntegerField(read_only=True)
+    email = serializers.EmailField(read_only=True)
+    username = serializers.CharField(read_only=True)
+    birthdate = serializers.DateField(read_only=True)
+    gender = serializers.CharField(read_only=True)
