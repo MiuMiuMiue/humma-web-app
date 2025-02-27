@@ -2,6 +2,7 @@ from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth import authenticate
+from .models import UserSettings
 
 User = get_user_model()
 
@@ -9,6 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ["id", "email", "username", "birthdate", "gender"]
+
 
 class UserRegisterSerializer(serializers.ModelSerializer):
     class Meta:
@@ -43,6 +45,39 @@ class UserLoginSerializer(serializers.Serializer):
             }
 
         raise serializers.ValidationError("Invalid credentials")
+    
+class UserSettingsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserSettings
+        fields = [
+            'theme', 'language',
+            'profile_visibility', 'data_consent'
+        ]
+        extra_kwargs = {
+            'data_consent': {'required': True}
+        }
+
+class UserSettingsUpdateSerializer(serializers.ModelSerializer):
+    settings = UserSettingsSerializer(source='user.settings')
+
+    class Meta:
+        model = User
+        fields = [
+            "id", "email", "username", 
+            "birthdate", "gender", "settings"
+        ]
+    
+    def update(self, instance, validated_data):
+        settings_data = validated_data.pop('user.settings', None)
+        if settings_data:
+            settings_serializer = UserSettingsSerializer(
+                instance.settings, 
+                data=settings_data,
+                partial=True
+            )
+            settings_serializer.is_valid(raise_exception=True)
+            settings_serializer.save()
+        return super().update(instance, validated_data)
 
 class UserProfileSerializer(serializers.Serializer):
     id = serializers.IntegerField(read_only=True)
