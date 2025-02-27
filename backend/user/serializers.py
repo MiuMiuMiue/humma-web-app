@@ -57,7 +57,7 @@ class UserSettingsSerializer(serializers.ModelSerializer):
             'data_consent': {'required': True}
         }
 
-class UserSerializer(serializers.ModelSerializer):
+class UserSettingsUpdateSerializer(serializers.ModelSerializer):
     settings = UserSettingsSerializer(source='user.settings')
 
     class Meta:
